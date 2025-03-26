@@ -31,10 +31,18 @@
 		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
 		     Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
 		<form method="post">
+        <div>
+			<label for="images">Choose a picture:</label>
+            <input type="file" id="images" name="avatar" accept="image/png, image/jpeg" />
+		</div>
 
 			<!-- Hint: Denk niet te ingewikkeld -->
+        <div class="preview">
 
-			<button type="submit" class="fdnd-button">Uploaden</button>
+        </div>
+
+
+	    <button type="submit" class="fdnd-button">Uploaden</button>
 
 		</form>
 
