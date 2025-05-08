@@ -9,35 +9,97 @@
 		<style>
 
            details {
-           border: 1px solid gray;
-           border-radius: 0.2rem;
-           padding: 0.5rem;
-		   width: 300px;
-           }
+		   cursor: pointer;
+		   border-radius: 0.4rem;
+		   margin: 0;
+		   padding: 10px;
+		   }
 
 		   details > summary {
-           list-style-type: '+';
+           content: '+';
+		   width: fit-content;
+		   border-radius:  0.4rem 0.4rem 0 0;
+		   border: 1px solid black;
+		   padding-left: 20px;
            }
 
-           details[open] > summary {
-           list-style-type: 'x';
+		   details > summary:hover,
+		   details > summary:focus {
+            border: 1px solid black;
+		   }
+
+		   summary {
+		   margin: 0;
+           cursor: pointer;
+           position: relative;
+           list-style: none;
+		   padding: 0.5rem;
            }
 
-		   details:open > summary, p {
+		   summary::before {
+			content: '+';
+			position: absolute;
+            left: 5px;
+            transition: transform 0.3s ease-in-out;
+		   }
+
+		   details[open] summary::before {
+			content: 'x';
+			transform: rotate(90deg); 
+		   }
+
+		   details[open] {
+			border-radius: 0.4rem 0.4rem 0 0; 
+		   }
+
+		   details:not([open]) > summary {
+			border-radius: 0.4rem;
+		
+		   }
+
+		   p {
+			width: fit-content;
+			margin: 0;   
+			padding: 0;
+		   }
+
+		   details:open > .one {
            background-color: #ccf;
+		   padding-left: 20px;
+		   border: none;
+           }
+           
+		   .purple {
+		   background: #ccf;
+           padding: 0.5rem;
+		   width: fit-content;
+		   border-radius: 0 0.4rem 0.4rem 0.4rem;
+           }
+		 
+		   details:open > .two {
+           background-color: lightgreen;
+		   padding-left: 20px;
+		   border: none;
            }
 
 		   .green {
 		   background: lightgreen;
 		   border-radius: 0.2rem;
            padding: 0.5rem;
-		   }
+           }
 
+		   details:open > .three {
+           background-color: yellow;
+		   padding-left: 20px;
+		   border: none;
+           }
+		   
 		   .yellow {
 		   background:yellow;
 		   border-radius: 0.2rem;
            padding: 0.5rem;
 		   }
+		
 
 			/* Schrijf hier gewoon je CSS voor dit component */
 
@@ -51,28 +113,27 @@
 
 
 		<details>
-			<summary class="">Wat is frontend development?</summary>
+			<summary class="one">Wat is frontend development?</summary>
 			<p class="purple">Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
 			</p>
 		</details>
 
 
 		<details>
-			<summary>Moet ik al kunnen coderen?</summary>
+			<summary class="two">Moet ik al kunnen coderen?</summary>
 			<p class="green">Nee, je hebt helemaal geen voorkennis nodig om te beginnen aan deze opleiding, we kunnen je alles leren! Als je wel al voorkennis hebt, is dat alleen maar goed, dan kunnen we je helpen je skills te verbeteren en te verdiepen in de stof.
 			</p>
 		</details>
 
 		
 		<details>
-			<summary>Wat is een Associate Degree?</summary>
+			<summary class="three">Wat is een Associate Degree?</summary>
 			<p class="yellow">Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5. Een Ad slaat een brug tussen het mbo-4 (niveau 4) en een hbo-bachelor (niveau 6). Met een Associate degree kies je voor een praktijkgerichte hbo-opleiding; je wordt opgeleid voor een beroep dat aansluit bij de praktijk. In dit geval word je opgeleid tot ‘frontend designer/developer' of kortweg ‘frontender’. Frontenders ontwerpen en maken interactieve, toegankelijke toepassingen voor het web. Frontenders werken binnen het gebied van software development, interactieontwerp en digitaal visueel ontwerp.
-				Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).
 			</p>
+			<p class="yellow">Na afronding van deze tweejarige hbo-opleiding, krijg je een wettelijk erkend hbo-diploma met de graad Associate degree. Met dit Ad-diploma kun je direct aan de slag in het werkveld of doorstromen naar de bacheloropleiding Communication and Multimedia Design (CMD).</p>
 		</details>
 
 		
-
 		<!-- Content (waar nog wat HTML omheen moet 😄):
 		Wat is frontend development?
 		Een frontend developer ontwerpt en bouwt websites in HTML, CSS en JavaScript. Deze frontend talen leer je bij ons, je hebt dus geen voorkennis nodig.
